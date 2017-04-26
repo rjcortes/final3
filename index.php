@@ -1,6 +1,6 @@
 <?php include 'view/header.php'; ?>
 <?php
-require_once 'model/accounts_db.php';
+require_once 'model/database.php';
 
 $query = 'SELECT * FROM acounts ORDER BY id';
 $statement = $db->prepare($query);
@@ -26,7 +26,7 @@ $statement->closeCursor();
 
 <div class="container">
   <h2>Sign Up</h2>
-  <form method="post" action="process.php">
+  <form method="post" action="signup_process.php">
     <div class="form-group">
       <label>Email:</label>
       <input type="text" name="email" class="form-control" id="email" placeholder="Enter email">
@@ -41,7 +41,7 @@ $statement->closeCursor();
 <hr>
 <div class="container">
   <h2>Log In</h2>
-  <form method="post" action="process2.php" name="loginform" id="loginform">
+  <form method="post" action="login_process.php" name="loginform" id="loginform">
     <div class="form-group">
       <label for="email">Email:</label>
       <input type="text" name="email" class="form-control" id="email" placeholder="Enter email">
