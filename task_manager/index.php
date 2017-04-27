@@ -186,12 +186,8 @@
                   </tr>
                 </tbody>
             </table>
-            <form method="post" action="addtask.php" autocomplete="off">
-              <div class="input-group">
-                <div class="input-group-btn">
-                  <input type="submit" value="Add New Task" class="btn btn-danger"/>
-                </div>
-              </div>
+            <form action="addtask.php">
+            <input type="submit" value="Add New Task" class="btn btn-default" />
             </form>
           </div>
       </div>
@@ -237,17 +233,10 @@
                     <td><input type="checkbox"  class="checkbox" name="packersOff" value="1" /></td>
                     <td><?php echo $task['task']; ?></td>
                     <td><?php echo $duedate['duedate']; ?></td>
-                    <td><input type="submit" class="btn btn-danger" value="delete" action="addtask.php" /></td>
+                    <td><input type="submit" class="btn btn-danger" value="delete" /></td>
                   </tr>
                 </tbody>
             </table>
-            <form method="post" action="addtask.php" autocomplete="off">
-              <div class="input-group">
-                <div class="input-group-btn">
-                  <input type="submit" value="Add New Task" class="btn btn-danger"/>
-                </div>
-              </div>
-            </form>
           </div>
       </div>
     </div>
