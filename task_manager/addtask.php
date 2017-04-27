@@ -1,52 +1,44 @@
-<?php
-	$servername = "sql2.njit.edu";
-    $username = "rjc37";
-    $password = "cosette2";
-    $dbname = "rjc37";
+<?php include '../view/header.php'; ?>
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-	die("Connection failed: " . $conn->connect_error);
-                                      }
+<html>
+<body>
 
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h1 style="color:black">Add Product</h1>
+    </div>
+  </div>
+</div>
 
-if(!isset($_REQUEST['task'])){
-	header('HTTO/1.1 500 Internal Server Error');
-	exit("ERROR: There was an error writing to the database. No task data provided.");
-}
+<div class="container" style="color:black"> 
+  <form method="post" action="index.php" id="add_product_form">
+    <div class="form-group">
+      <label>Task:</label>
+      <input type="text" name="task" class="form-control" id="task" placeholder="Enter Task">
+    </div>
+    <div class="form-group">
+      <label>Due Date:</label>
+      <input type="text" name="duedate" class="form-control" id="duedate" placeholder="Enter Due Date">
+    </div>
+    <input type="submit" value="Add New Task" class="btn btn-default">
+  </form>
+</div>
+<br>
 
-$params = array(
-	/*":createdate" => $_REQUEST['createdate'],
-	":duedate" => $_REQUEST['duedate'],*/
-     ":task" => $_REQUEST['task']
-);
+<!--
+        <input type="hidden" name="action" value="add_product">
 
-$results = prepareAndExecute('INSERT INTO my_tasks (task)
-							VALUES (:task)', $params);
+        <label>Category:</label>
+        <select name="category_id">
+        <?php foreach ( $categories as $category ) : ?>
+            <option value="<?php echo $category['categoryID']; ?>">
+                <?php echo $category['categoryName']; ?>
+            </option>
+        <?php endforeach; ?>
+        </select>
+        <br>
+-->
 
-if ($results == NULL || !is_numeric($results)) {
-	header('HTTO/1.1 500 Internal Server Error');
-	exit("ERROR: There was an error writing to the database.");
-}
-
-//echo $results
-
-/*
-$sql = "SELECT duedate, task FROM my_tasks WHERE id = '1'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-// output data of each row
-while($row = $result->fetch_assoc()) {
-    echo "<br> Due Date: ". $row["duedate"]. " " . $row["task"] . "<br>";
-}
-} else {
-    echo "0 results";
-}
-
-/*
-
-
-?>
+</main>
+<?php include '../view/footer.php'; ?>
