@@ -39,7 +39,6 @@ $statement->closeCursor();
       <input type="password" name="password" class="form-control" id="pwd" placeholder="Enter password">
     </div>
     <input type="submit" name="login" value="Login" class="btn btn-default">
-    <?php $hidden_password = preg_replace("|.|","*",$real_password); ?>
   </form><br>
     </div>
   </div>
