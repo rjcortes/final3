@@ -1,16 +1,37 @@
+<!-- Redirect Solution-->
+<html>
+<header>
 <?php
 
+   header( 'Location: https://web.njit.edu/~rjc37/is218_final/task_manager/' ) ;
+
+?>
+</header>
+</html>
+
+
+
+
+
+<?php ///The following is the code I was used to validate the login information, despite the changes I was not able to get it to work, in the interest of presenting I had to cut my losses, unfortunately
+
+
+
+/*
+
+///PDOConnect
 include_once 'pdoConnect.php';
 
-
+///Session IF
 if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['email']))
 {
-     ?>
+     
  
      <h1>Member Area</h1>
-     <pThanks for logging in! You are <code><?=$_SESSION['email']?></code> and your email address is <code><?=$_SESSION['email']?></code>.</p>
-      
-     <?php
+     <p><code><?php = $_SESSION['email']?></code> and your email address is <code><?php=$_SESSION['email']?></code>.</p>
+    
+    <?php  
+
 }
 elseif(!empty($_POST['email']) && !empty($_POST['password']))
 {
@@ -38,6 +59,11 @@ elseif(!empty($_POST['email']) && !empty($_POST['password']))
         echo "<p>Sorry, your account could not be found. Please <a href=\"index.php\">click here to try again</a>.</p>";
     }
 }
-else
-{
+
+*/
     ?>
+
+
+
+
+
